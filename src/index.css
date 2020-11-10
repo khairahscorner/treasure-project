@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Titillium+Web:wght@400;600;700&display=swap');
+
+* {
+	box-sizing: border-box;
+	font-family: 'Titillium Web', 'Lato', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	background-color: rgba(229, 229, 229, 0.3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+:focus {
+	outline: rgba(247, 247, 247, 0.589) 1px;
+}
+

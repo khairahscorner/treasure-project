@@ -1,9 +1,13 @@
 import React from "react";
+import Layout from '../components/layout';
+import {MainWrapper} from '../components/styles';
 
 const Home = (props) => {
-  
+
     return (
-      <div>home page here</div>
+      <Layout>
+        <MainWrapper>Home page</MainWrapper>
+      </Layout>
     );
 }
 

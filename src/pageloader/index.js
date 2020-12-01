@@ -36,7 +36,7 @@ export const Members = loadable(() => import("../pages/members"), {
   fallback: Preloader,
 });
 
-export const Songs = loadable(() => import("../pages/songs"), {
+export const Songs = loadable(() => import("../pages/media"), {
   fallback: Preloader,
 });
 

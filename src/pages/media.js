@@ -2,13 +2,13 @@ import React from "react";
 import Layout from '../components/layout';
 import {MainWrapper} from '../components/styles';
 
-const SingleSong = (props) => {
+const Songs = (props) => {
   
   return (
     <Layout>
-      <MainWrapper>Single Songs page</MainWrapper>
+      <MainWrapper>All Songs page</MainWrapper> 
     </Layout>
   );
 }
 
-export default SingleSong;
+export default Songs;

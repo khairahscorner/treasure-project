@@ -3,9 +3,9 @@ import {screens} from '../sizes';
 const red = '#be0028';
 
 export const HeaderWrapper = styled.header`
-    position: sticky;
+    // position: sticky;
     width: 100%;
-    top: 0;
+    // top: 0;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -125,6 +125,9 @@ export const FooterWrapper = styled.footer`
         svg {
             width: 100%;
             object-align: cover;
+        }     
+        @media ${screens.mobileL} {
+            width: 50%;
         }
     }
     .social-icons {
@@ -163,12 +166,29 @@ export const FooterWrapper = styled.footer`
         }
     }
 `
+export const ButtonWrapper = styled.button`
+    padding: 10px 20px;
+    background-color: ${red};
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: transform .5s ease-in-out;
+    a {
+        color: #ffffff;
+        font-weight: 600;
+    }
+    &:hover {
+        transform: translateY(-5px);
+    }
+`
 
 export const MainWrapper = styled.main`
     width: 80%;
     margin: 0 auto;
     padding: 50px 0;
     min-height: 100vh;
+    @media ${screens.mobileL} {
+        width: 100%; 
+    }
     .first-section {
         display: flex;
         flex-direction: column;
@@ -176,10 +196,13 @@ export const MainWrapper = styled.main`
         padding-bottom: 30px;
         border-bottom: 1px solid #777777;
         .heading {
-            font-size: 36px;
+            font-size: 36px; 
         }
         .sub {
             font-size: 28px;
+            @media ${screens.mobileL} {
+                font-size: 20px; 
+            }
         }
         .span {          
             font-style: italic;
@@ -193,26 +216,60 @@ export const MainWrapper = styled.main`
                 object-fit: contain;
             }
             @media ${screens.mobileL} {
-                width: 50%;
+                width: 70%;
             }
         }
         .quote {
             font-style: italic;
             font-size: 30px;
             color: #282828;
+            @media ${screens.mobileL} {
+                font-size: 20px; 
+            }
         }
         .about {
             margin: 40px auto;
             width: 45%;
             text-align: center;
             line-height: 36px;
+            font-weight: 600;
+            @media ${screens.mobileL} {
+                width: 80%;
+            }
         }
     }
     .second-section {
         margin: 70px 0 50px;
         text-align: center;
+        .bio-image {
+            width: 100%;
+            height: auto;
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        .bio {
+            width: 90%;
+            margin: 60px auto 20px;
+            font-weight: 600;
+            line-height: 32px;
+            p {
+                padding: 10px 0;
+            }
+        }
+        .source {
+            font-style: italic;
+            font-weight: 400;
+            text-decoration: underline;
+            color: ${red};
+        }
     }
     .section-heading {
         font-size: 32px;
+        margin-bottom: 60px;
+        @media ${screens.mobileL} {
+            font-size: 28px;
+        }
     }
 `

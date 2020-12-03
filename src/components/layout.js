@@ -15,6 +15,7 @@ const Layout = ({children}) => {
   const toggleMenu = () => {
     setNavMobileVisible(!navMobileVisible)
   }
+
     return (
       <div>
         <HeaderWrapper>
@@ -26,9 +27,8 @@ const Layout = ({children}) => {
           <nav>
             <ul className={`nav-items ${navMobileVisible ? "nav-open" : ""}`}>
               <li className="nav-item">
-                {/* useref to scroll to about section */}
                 <NavLink exact to="/" className="nav-link" activeClassName="active">
-                  About
+                  Home
                 </NavLink>
               </li>
               <li className="nav-item">

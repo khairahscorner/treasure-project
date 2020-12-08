@@ -8,7 +8,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Pages.Home} />
         <Route path="/members" component={Pages.Members} />
-        <Route path="/songs" component={Pages.Songs} />
+        <Route exact path="/songs" component={Pages.Songs} />
         <Route path="/songs/:songId" component={Pages.SingleSong} />
         <Redirect to="/" />
       </Switch>

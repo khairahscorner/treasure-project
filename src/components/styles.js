@@ -195,81 +195,141 @@ export const MainWrapper = styled.main`
         align-items: center;
         padding-bottom: 30px;
         border-bottom: 1px solid #777777;
-        .heading {
-            font-size: 36px; 
+    }
+    .heading {
+        font-size: 36px; 
+    }
+    .sub {
+        font-size: 28px;
+        @media ${screens.mobileL} {
+            font-size: 20px; 
         }
-        .sub {
-            font-size: 28px;
-            @media ${screens.mobileL} {
-                font-size: 20px; 
-            }
+    }
+    .span {          
+        font-style: italic;
+    }
+    .logo {
+        width: 30%;
+        height: auto;
+        margin: 50px 0;
+        img {
+            width: 100%;
+            object-fit: contain;
         }
-        .span {          
-            font-style: italic;
+        @media ${screens.mobileL} {
+            width: 70%;
         }
-        .logo {
-            width: 30%;
-            height: auto;
-            margin: 50px 0;
-            img {
-                width: 100%;
-                object-fit: contain;
-            }
-            @media ${screens.mobileL} {
-                width: 70%;
-            }
+    }
+    .quote {
+        font-style: italic;
+        font-size: 30px;
+        color: #282828;
+        @media ${screens.mobileL} {
+            font-size: 20px; 
         }
-        .quote {
-            font-style: italic;
-            font-size: 30px;
-            color: #282828;
-            @media ${screens.mobileL} {
-                font-size: 20px; 
-            }
-        }
-        .about {
-            margin: 40px auto;
-            width: 45%;
-            text-align: center;
-            line-height: 36px;
-            font-weight: 600;
-            @media ${screens.mobileL} {
-                width: 80%;
-            }
+    }
+    .about {
+        margin: 30px auto;
+        width: 45%;
+        text-align: center;
+        line-height: 36px;
+        font-weight: 600;
+        @media ${screens.mobileL} {
+            width: 80%;
         }
     }
     .second-section {
         margin: 70px 0 50px;
         text-align: center;
-        .bio-image {
+    }
+    .bio-image {
+        width: 100%;
+        height: auto;
+        img {
             width: 100%;
-            height: auto;
-            img {
-                width: 100%;
-                object-fit: contain;
-            }
+            object-fit: contain;
         }
-        .bio {
-            width: 90%;
-            margin: 60px auto 20px;
-            font-weight: 600;
-            line-height: 32px;
-            p {
-                padding: 10px 0;
-            }
+    }
+    .bio {
+        width: 90%;
+        margin: 60px auto 20px;
+        font-weight: 600;
+        line-height: 32px;
+        p {
+            padding: 10px 0;
         }
-        .source {
-            font-style: italic;
-            font-weight: 400;
-            text-decoration: underline;
-            color: ${red};
-        }
+    }
+    .source {
+        font-style: italic;
+        font-weight: 400;
+        text-decoration: underline;
+        color: ${red};
+    }
+    .section {
+        padding: 50px 0;
     }
     .section-heading {
         font-size: 32px;
         margin-bottom: 60px;
+        text-align: center;
+        text-transform: uppercase;
         @media ${screens.mobileL} {
             font-size: 28px;
         }
+    }
+    .loading {
+        padding: 100px;
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media ${screens.mobileL} {
+            justify-content: center;
+        }
+        .flex-group {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin-bottom: 40px;
+            @media ${screens.mobileL} {
+                width 80%;
+            }
+            .img-box {
+                position: relative;
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    padding: 10px;
+                    border: 1px solid transparent;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: white;
+                    text-align: center;
+                }
+            }
+            .text {
+                margin-top: 10px;
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .members {
+    }
+    .reduced {
+        width: 80%;
+        margin-top: 30px;
     }
 `

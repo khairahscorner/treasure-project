@@ -290,39 +290,62 @@ export const MainWrapper = styled.main`
         @media ${screens.mobileL} {
             justify-content: center;
         }
+        .member {
+            width: 24%;
+        }
         .flex-group {
+            width: 30%;
+        }
+        .flex-group, .member {         
             display: flex;
             flex-direction: column;
-            width: 30%;
             margin-bottom: 40px;
             @media ${screens.mobileL} {
                 width 80%;
             }
-            .img-box {
-                position: relative;
+        }
+        .img-box {
+            position: relative;
+            width: 100%;
+            img {
                 width: 100%;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-                .overlay {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    padding: 10px;
-                    border: 1px solid transparent;
-                    border-radius: 50%;
-                    transform: translate(-50%, -50%);
-                    background-color: white;
-                    text-align: center;
-                }
+                height: 100%;
+                object-fit: cover;
             }
-            .text {
-                margin-top: 10px;
-                span {
-                    font-weight: 700;
-                }
+            .overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                padding: 10px;
+                border: 1px solid transparent;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                text-align: center;
+            }
+        }
+        .text {
+            margin-top: 10px;
+            span {
+                font-weight: 700;
+            }
+        }
+        .img-group {
+            border: 1px solid transparent;
+            width: 48%;
+            margin-bottom: 60px;
+            transition: transform 1s ease;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:hover {
+                border: 1px solid ${red};
+                transform: scale(1.02);
+            }
+            @media ${screens.mobileL} {
+                width 80%;
             }
         }
     }

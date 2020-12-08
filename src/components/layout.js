@@ -41,6 +41,11 @@ const Layout = ({children}) => {
                   Songs
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/gallery" className="nav-link" activeClassName="active">
+                  Gallery
+                </NavLink>
+              </li>
             </ul>
             <div
               className={`hamburger tab-btn ${navMobileVisible ? "toggle" : ""}`}

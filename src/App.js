@@ -9,6 +9,7 @@ const App = () => {
         <Route exact path="/" component={Pages.Home} />
         <Route path="/members" component={Pages.Members} />
         <Route exact path="/songs" component={Pages.Songs} />
+        <Route exact path="/gallery" component={Pages.Gallery} />
         <Route path="/songs/:songId" component={Pages.SingleSong} />
         <Redirect to="/" />
       </Switch>

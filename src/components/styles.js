@@ -391,6 +391,9 @@ export const MainWrapper = styled.main`
         }
         .category {
             font-size: 24px;
+            @media ${screens.mobileL} {
+                font-size: 18px;
+            }
         }
     }
     .overlay {

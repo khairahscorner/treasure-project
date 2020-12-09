@@ -206,7 +206,7 @@ const Members = (props) => {
                       <span>Full Name: </span> {member.full_name}
                     </div>
                     <div className="text">
-                      <span>Age: </span> {(new Date()).getUTCFullYear() - parseInt(member.yob) + 1}
+                      <span>Korean Age: </span> {(new Date()).getUTCFullYear() - parseInt(member.yob) + 1}
                     </div>
                     <div className="text">
                       <span>Date of Birth: </span> {member.dob}, {member.yob}
@@ -249,7 +249,7 @@ const Members = (props) => {
                       <span>Full Name: </span> {member.full_name}
                     </div>
                     <div className="text">
-                      <span>Age: </span> {(new Date()).getUTCFullYear() - parseInt(member.yob) + 1}
+                      <span>Korean Age: </span> {(new Date()).getUTCFullYear() - parseInt(member.yob) + 1}
                     </div>
                     <div className="text">
                       <span>Date of Birth: </span> {member.dob}, {member.yob}
@@ -292,7 +292,7 @@ const Members = (props) => {
                       <span>Full Name: </span> {member.full_name}
                     </div>
                     <div className="text">
-                      <span>Age: </span> {(new Date()).getUTCFullYear() - parseInt(member.yob) + 1}
+                      <span>Korean Age: </span> {(new Date()).getUTCFullYear() - parseInt(member.yob) + 1}
                     </div>
                     <div className="text">
                       <span>Date of Birth: </span> {member.dob}, {member.yob}

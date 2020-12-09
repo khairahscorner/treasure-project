@@ -349,8 +349,21 @@ export const MainWrapper = styled.main`
             }
         }
     }
-    .members {
-    }
+    .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            .btn {
+                margin-left: 30px;
+                cursor: pointer;
+                transition: all 0.5s ease;
+                outline: transparent;
+                margin-top: 10px;
+            }
+            .toggle {
+                transform: rotate(180deg);
+            }
+        }
     .reduced {
         width: 80%;
         margin-top: 30px;

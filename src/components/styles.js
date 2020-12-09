@@ -3,10 +3,10 @@ import {screens} from '../sizes';
 const red = '#be0028';
 
 export const HeaderWrapper = styled.header`
-    // position: sticky;
+    position: sticky;
     width: 100%;
-    // top: 0;
-    // z-index: 100;
+    top: -1px;
+    z-index: 100;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -29,6 +29,7 @@ export const HeaderWrapper = styled.header`
     }
     .nav-items {
             position: fixed;
+            z-index: 100;
             top: 0;
             bottom:0;
             right: 0;

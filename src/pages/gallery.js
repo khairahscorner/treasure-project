@@ -30,42 +30,55 @@ const Gallery = (props) => {
             <div className="flex-row">
                 <div className="img-group">
                     <img src={Chp3} alt="track list chp 3 poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Chp2} alt="track list chp 2 poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={MMM} alt="mmm poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Love} alt="saranghe poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Chp1} alt="track list chp 1 poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Live} alt="orange live poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Orange} alt="orange poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={BLT} alt="blt poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Wayo} alt="wayo poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Wayo2} alt="wayo other poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Come} alt="come to me poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Boy} alt="boy poster" />
+                    <div className="overlay"/>
                 </div>
                 <div className="img-group">
                     <img src={Last} alt="treasure group poster" />
+                    <div className="overlay"/>
                 </div>
             </div>
         </div>

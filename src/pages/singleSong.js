@@ -8,6 +8,7 @@ import YouTube from 'react-youtube';
 const SingleSong = (props) => {
   const {songId} = useParams();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [results, setResults] = useState({});
   const options = {
     playerVars: {
@@ -24,15 +25,21 @@ const SingleSong = (props) => {
     fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=${songId}&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c`)
     .then((res) => res.json())
     .then((res) => {
+      if(res.items.length === 0) {
+        errorLoaded()
+      }
       setResults({...res.items[0]});
       setLoading(false);
     });
-  }, []);
+  }, [songId]);
 
   const playVideo = e => {
     setTimeout(()=>{
       e.target.playVideo();
     }, 2000)
+  }
+  const errorLoaded = e => {
+    setError("Could not Load Such Video")
   }
 
   const numberWithCommas = (x) => {
@@ -50,9 +57,12 @@ const SingleSong = (props) => {
             videoId={songId}
             opts={options}
             onReady={playVideo}
-          />
-          {loading ? <p className="text">Loading...</p>: (
-            results && (
+            onError={errorLoaded}
+          >
+            {error ? <p>{error}</p>: null}
+          </YouTube>
+          {loading  ? <p className="text">Loading...</p>: (
+            results && error === null && (
               <>
               <div className="text category">
                 <span>Title: </span>{results.snippet.title}

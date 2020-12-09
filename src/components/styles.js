@@ -245,8 +245,8 @@ export const MainWrapper = styled.main`
         text-align: center;
     }
     .bio-image {
+        position: relative;
         width: 100%;
-        height: auto;
         img {
             width: 100%;
             object-fit: contain;
@@ -314,19 +314,9 @@ export const MainWrapper = styled.main`
                 height: 100%;
                 object-fit: cover;
             }
-            .overlay {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                padding: 10px;
-                border: 1px solid transparent;
-                border-radius: 50%;
-                transform: translate(-50%, -50%);
-                background-color: white;
-                text-align: center;
-            }
         }
         .img-group {
+            position: relative;
             border: 1px solid transparent;
             width: 48%;
             margin-bottom: 60px;
@@ -401,5 +391,15 @@ export const MainWrapper = styled.main`
         .category {
             font-size: 24px;
         }
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: #f7f7f7;
+        height: 50px;
+        z-index: -1;
     }
 `

@@ -173,6 +173,7 @@ const Members = (props) => {
           <h1 className="heading">Find Your Treasure</h1>
           <div className="bio-image reduced">
             <img src={Poster} alt="treasure about" />
+            <div className="overlay"/>
           </div>
           <div className="about">
             Learn about each member; full names, nicknames, ages, hobbies and
@@ -188,6 +189,7 @@ const Members = (props) => {
               <div className="member" key={member.stage_name}>
                 <div className="img-box">
                   <img src={member.image} alt={member.stage_name} />
+                  <div className="overlay"/>
                 </div>
                 <div className="content">
                   <div className="text">
@@ -230,6 +232,7 @@ const Members = (props) => {
               <div className="member" key={member.stage_name}>
                 <div className="img-box">
                   <img src={member.image} alt={member.stage_name} />
+                  <div className="overlay"/>
                 </div>
                 <div className="content">
                   <div className="text">
@@ -272,6 +275,7 @@ const Members = (props) => {
               <div className="member" key={member.stage_name}>
                 <div className="img-box">
                   <img src={member.image} alt={member.stage_name} />
+                  <div className="overlay"/>
                 </div>
                 <div className="content">
                   <div className="text">

@@ -153,6 +153,7 @@ const Members = (props) => {
     // create an array of false states for all team members
     const allMembers = [...HyungMembers, ...MiddleMembers, ...MaknaeMembers];
     let arr = [];
+    // eslint-disable-next-line
     for(let _ in allMembers) {
       arr.push(false) 
     }

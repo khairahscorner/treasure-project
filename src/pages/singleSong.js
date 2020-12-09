@@ -1,18 +1,75 @@
-import React, {useEffect} from "react";
-import {useParams} from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import {useParams, NavLink} from 'react-router-dom';
+import moment from 'moment';
 import Layout from '../components/layout';
-import {MainWrapper} from '../components/styles';
+import {MainWrapper, ButtonWrapper} from '../components/styles';
+import YouTube from 'react-youtube';
 
 const SingleSong = (props) => {
   const {songId} = useParams();
+  const [loading, setLoading] = useState(true);
+  const [results, setResults] = useState({});
+  const options = {
+    playerVars: {
+      rel: 0,
+      enablejsapi: 1,
+      // origin: "http://localhost:3000/"
+      origin: "https://treasureproject.netlify.app/"
+    }
+  }
 
   useEffect(() => {
-    
-  })
+    setLoading(true);
+    //details
+    fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=${songId}&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c`)
+    .then((res) => res.json())
+    .then((res) => {
+      setResults({...res.items[0]});
+      setLoading(false);
+    });
+  }, []);
+
+  const playVideo = e => {
+    setTimeout(()=>{
+      e.target.playVideo();
+    }, 2000)
+  }
+
+  const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
   return (
     <Layout>
-      <MainWrapper>{songId} Song page</MainWrapper>
+      <MainWrapper>
+        <h1 className="heading">Watch Treasure</h1>
+        <div className="song-section">
+          <YouTube
+            className="video"
+            containerClassName="video-player"
+            videoId={songId}
+            opts={options}
+            onReady={playVideo}
+          />
+          {loading ? <p className="text">Loading...</p>: (
+            results && (
+              <>
+              <div className="text category">
+                <span>Title: </span>{results.snippet.title}
+              </div>
+              <div className="text category">
+                <span>Premiered: </span>{moment(results.snippet.publishedAt).format("Do MMM, YYYY")}
+              </div>
+              <div className="text category">
+                <span>Total Views: </span>{numberWithCommas(results.statistics.viewCount)}
+              </div>
+            </>)
+          )}
+          <ButtonWrapper style={{fontSize: "18px", margin: "30px auto"}}>
+              <NavLink to="/songs">Go Back</NavLink>
+            </ButtonWrapper>
+        </div>
+      </MainWrapper>
     </Layout>
   );
 }

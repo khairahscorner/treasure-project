@@ -1,22 +1,17 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import axios from 'axios';
 import Layout from '../components/layout';
 import {MainWrapper} from '../components/styles';
-import Live from '../assets/orange-live.jpg'
-import Wayo from '../assets/wayo.jpg'
-import Wayo2 from '../assets/wayo2.jpg'
-import Chp1 from '../assets/chp1-track-list.jpg'
-import Chp2 from '../assets/chp2-track-list.jpg'
-import Chp3 from '../assets/chp3-track-list.jpg'
-import MMM from '../assets/mmm.jpg'
-import Love from '../assets/i-love-you.jpg'
-import Orange from '../assets/orange.jpg'
-import BLT from '../assets/bling-like-this.png'
-import Come from '../assets/come-to-me.png'
-import Boy from '../assets/boy.jpg'
-import Last from '../assets/treasure2.jpg'
 
 const Gallery = (props) => {
+    const [allImages, setAllImages] = useState([]);
 
+    useEffect(() => {
+        axios.get('https://res.cloudinary.com/khairahscorner/image/list/gallery.json')
+        .then(res => {
+        setAllImages([...res.data.resources]);     
+        })
+    })
   return (
     <Layout>
       <MainWrapper>
@@ -28,58 +23,17 @@ const Gallery = (props) => {
         </div>
         <div className="section">
             <div className="flex-row">
-                <div className="img-group">
-                    <img src={Chp3} alt="track list chp 3 poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Chp2} alt="track list chp 2 poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={MMM} alt="mmm poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Love} alt="saranghe poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Chp1} alt="track list chp 1 poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Live} alt="orange live poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Orange} alt="orange poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={BLT} alt="blt poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Wayo} alt="wayo poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Wayo2} alt="wayo other poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Come} alt="come to me poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Boy} alt="boy poster" />
-                    <div className="overlay"/>
-                </div>
-                <div className="img-group">
-                    <img src={Last} alt="treasure group poster" />
-                    <div className="overlay"/>
-                </div>
+                {
+                    allImages.length> 0 && (
+                        allImages.map(el => (
+                        <div className="img-group" key={el.public_id}>
+                            <img 
+                            src={`https://res.cloudinary.com/khairahscorner/image/upload/${el.public_id}.jpg`} 
+                            alt={`${el.public_id} poster`} />
+                            <div className="overlay"/>
+                        </div>))
+                    )}
+                
             </div>
         </div>
       </MainWrapper>

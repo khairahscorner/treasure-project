@@ -14,12 +14,12 @@ const Songs = (props) => {
   useEffect(() => {
     setLoading(true);
     //title tracks
-    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&playlistId=PLehSpAZwgtvAVjTJKrOGlnIC_3jgCiC6z&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
+    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=50&playlistId=PLehSpAZwgtvAVjTJKrOGlnIC_3jgCiC6z&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
     .then((res) => res.json())
     .then((res) => {
       const response = res.items
       //others
-      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&playlistId=PLehSpAZwgtvA7B1inU6r-Atzvh9GfZqNA&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
+      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=50&playlistId=PLehSpAZwgtvA7B1inU6r-Atzvh9GfZqNA&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
       .then((res) => res.json())
       .then((res) => {
         setLoading(false);

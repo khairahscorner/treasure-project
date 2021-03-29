@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {NavLink} from 'react-router-dom';
 import moment from 'moment';
 import Layout from '../components/layout';
-import {MainWrapper} from '../components/styles';
+import {MainWrapper, ButtonWrapper} from '../components/styles';
 
 const Songs = (props) => {
   const [loading, setLoading] = useState(true);
@@ -14,12 +14,12 @@ const Songs = (props) => {
   useEffect(() => {
     setLoading(true);
     //title tracks
-    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=50&playlistId=PLehSpAZwgtvAVjTJKrOGlnIC_3jgCiC6z&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
+    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=10&playlistId=PLehSpAZwgtvAVjTJKrOGlnIC_3jgCiC6z&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
     .then((res) => res.json())
     .then((res) => {
       const response = res.items
       //others
-      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=50&playlistId=PLehSpAZwgtvA7B1inU6r-Atzvh9GfZqNA&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
+      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=10&playlistId=PLehSpAZwgtvA7B1inU6r-Atzvh9GfZqNA&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
       .then((res) => res.json())
       .then((res) => {
         setLoading(false);
@@ -62,11 +62,18 @@ const Songs = (props) => {
                   </div>
                 ))}
               </div>
+              {results.titleTracks.length > 6 ? (
+                <ButtonWrapper>
+                  <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA">
+                    Watch more
+                  </a>
+                </ButtonWrapper>
+              ): null}
             </div>
             <div className="section">
               <h2 className="section-heading" >~ OTHER TRACKS ~</h2>
               <div className="flex-row">
-                {results.otherTracks.map(el => (
+                {results.otherTracks.slice(0,6).map(el => (
                   <div className="flex-group" key={el.id}>
                     <NavLink to={`/songs/${el.snippet.resourceId.videoId}`}>
                       <div className="img-box">
@@ -82,6 +89,15 @@ const Songs = (props) => {
                   </div>
                 ))}
               </div>
+              {results.otherTracks.length > 6 ? (
+              <div className="btn">
+                <ButtonWrapper>
+                  <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA">
+                    Watch more
+                  </a>
+                </ButtonWrapper>
+                </div>
+              ): null}
             </div>
           </>
         )}

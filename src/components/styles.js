@@ -406,4 +406,7 @@ export const MainWrapper = styled.main`
         height: 50px;
         z-index: -1;
     }
+    .btn {
+        text-align: center;
+    }
 `

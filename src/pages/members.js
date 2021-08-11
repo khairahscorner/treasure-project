@@ -187,10 +187,11 @@ const Members = (props) => {
             <img src={Poster} alt="treasure about" />
             <div className="overlay"/>
           </div>
-          <div className="about">
+          <div className="about text">
             Learn about each member; full names, nicknames, ages, hobbies and
             individual positions in TREASURE. <br />
-            Member ages are in Korean age. All info were gotten through intro content from their 
+            <span>Member ages are in Korean age. </span><br />
+            All info were gotten through intro content from their 
             <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA"> YouTube channel</a>.
           </div>
         </div>

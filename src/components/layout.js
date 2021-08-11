@@ -7,6 +7,8 @@ import {ReactComponent as FacebookIcon} from "../assets/facebook.svg";
 import {ReactComponent as InstagramIcon} from "../assets/instagram.svg";
 import {ReactComponent as TwitterIcon} from "../assets/twitter.svg";
 import {ReactComponent as YoutubeIcon} from "../assets/youtube.svg";
+import {ReactComponent as WeverseIcon} from "../assets/weverse.svg";
+import {ReactComponent as VliveIcon} from "../assets/v-live.svg";
 
 const Layout = ({children}) => {
   //State for toggling menu for mobile
@@ -84,6 +86,16 @@ const Layout = ({children}) => {
             <div className="icon">
               <a target="_blank" rel="noreferrer" href="https://www.facebook.com/OfficialTreasure/">
                 <FacebookIcon />
+              </a>
+            </div>
+            <div className="icon">
+              <a target="_blank" rel="noreferrer" href="https://www.weverse.io/treasure/feed">
+                <WeverseIcon />
+              </a>
+            </div>
+            <div className="icon">
+              <a target="_blank" rel="noreferrer" href="https://www.vlive.tv/channel/B978B7">
+                <VliveIcon />
               </a>
             </div>
           </div>

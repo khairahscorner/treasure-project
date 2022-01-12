@@ -3,8 +3,9 @@ import {NavLink} from 'react-router-dom';
 import moment from 'moment';
 import Layout from '../components/layout';
 import {MainWrapper, ButtonWrapper} from '../components/styles';
+import {YOUTUBE_KEY, TITLE_TRACKS_ID, OTHER_TRACKS_ID } from "../config";
 
-const Songs = (props) => {
+const Songs = () => {
   const [loading, setLoading] = useState(true);
   const [results, setResults] = useState({
     titleTracks: [],
@@ -14,12 +15,12 @@ const Songs = (props) => {
   useEffect(() => {
     setLoading(true);
     //title tracks
-    fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=10&playlistId=PLehSpAZwgtvAVjTJKrOGlnIC_3jgCiC6z&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
+    fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=10&playlistId=${TITLE_TRACKS_ID}&key=${YOUTUBE_KEY}`)
     .then((res) => res.json())
     .then((res) => {
       const response = res.items
       //others
-      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=10&playlistId=PLehSpAZwgtvA7B1inU6r-Atzvh9GfZqNA&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c')
+      fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=contentDetails&maxResults=10&playlistId=${OTHER_TRACKS_ID}&key=${YOUTUBE_KEY}`)
       .then((res) => res.json())
       .then((res) => {
         setLoading(false);
@@ -45,7 +46,7 @@ const Songs = (props) => {
             <div className="section">
               <h2 className="section-heading" >~ TITLE TRACKS ~</h2>
               <div className="flex-row">
-                {results.titleTracks.map(el => (
+                {results.titleTracks.slice(0,6).map(el => (
                   <div className="flex-group" key={el.id}>
                     <NavLink to={`/songs/${el.snippet.resourceId.videoId}`}>
                       <div className="img-box">

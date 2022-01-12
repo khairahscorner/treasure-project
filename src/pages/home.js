@@ -5,7 +5,7 @@ import {MainWrapper, ButtonWrapper} from '../components/styles';
 import Logo from "../assets/main_logo.svg";
 import Poster from "../assets/treasure4.jpeg";
 
-const Home = (props) => {
+const Home = () => {
 
     return (
       <Layout>

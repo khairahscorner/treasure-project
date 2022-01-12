@@ -3,7 +3,7 @@ import axios from 'axios';
 import Layout from '../components/layout';
 import {MainWrapper} from '../components/styles';
 
-const Gallery = (props) => {
+const Gallery = () => {
     const [allImages, setAllImages] = useState([]);
 
     useEffect(() => {

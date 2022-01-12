@@ -22,7 +22,7 @@ const PreloaderWrapper = styled.div`
     }
 `
 
-const Preloader = (
+export const Preloader = (
   <PreloaderWrapper>
     <img src={Logo} alt="preloader logo" />
   </PreloaderWrapper>

@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {useParams, NavLink} from 'react-router-dom';
 import moment from 'moment';
+import YouTube from 'react-youtube';
 import Layout from '../components/layout';
 import {MainWrapper, ButtonWrapper} from '../components/styles';
-import YouTube from 'react-youtube';
+import {URL, YOUTUBE_KEY} from '../config';
 
-const SingleSong = (props) => {
+const SingleSong = () => {
   const {songId} = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,14 +16,14 @@ const SingleSong = (props) => {
       rel: 0,
       enablejsapi: 1,
       // origin: "http://localhost:3000/"
-      origin: "https://treasureproject.netlify.app/"
+      origin: URL
     }
   }
 
   useEffect(() => {
     setLoading(true);
     //details
-    fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=${songId}&key=AIzaSyCGk8-2hrhfVlemHzYhcJvVRU0cCa2nt9c`)
+    fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=${songId}&key=${YOUTUBE_KEY}`)
     .then((res) => res.json())
     .then((res) => {
       if(res.items.length === 0) {

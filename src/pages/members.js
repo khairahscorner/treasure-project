@@ -5,7 +5,7 @@ import {MainWrapper} from '../components/styles';
 import {Preloader} from '../pageloader/index';
 import {SPACE_ID, ACCESS_TOKEN} from '../config';
 import {ReactComponent as ArrowIcon} from '../assets/arrow-down.svg';
-import Poster from '../assets/treasure1.jpg';
+import Poster from '../assets/group.jpeg';
 
 export const findImg = (val, arr) => {
   const result = arr.find((el) => el.public_id.includes(val) === true)
@@ -102,11 +102,11 @@ const Members = (props) => {
                         <img src={`https://res.cloudinary.com/khairahscorner/image/upload/${findImg(member.tag, allImages)}.jpg`} alt={member.stageName} />
                         <div className="overlay"/>
                       </div>
-                      <div className="content">
+                      <div className="content" onClick={() => toggleVisible(index)} style={{cursor:'pointer'}}>
                         <div className="text">
                           <span>Name: </span>{member.stageName}
                         </div>
-                        <div className={`btn ${allVisible[index] ? "toggle" : ""}`} onClick={() => toggleVisible(index)} > 
+                        <div className={`btn ${allVisible[index] ? "toggle" : ""}`}> 
                           <ArrowIcon />
                         </div>
                       </div>
@@ -148,11 +148,11 @@ const Members = (props) => {
                         <img src={`https://res.cloudinary.com/khairahscorner/image/upload/${findImg(member.tag, allImages)}.jpg`}  alt={member.stageName} />
                         <div className="overlay"/>
                       </div>
-                      <div className="content">
+                      <div className="content" onClick={() => toggleVisible(index+4)} style={{cursor:'pointer'}}>
                         <div className="text">
                           <span>Name: </span>{member.stageName}
                         </div>
-                        <div className={`btn ${allVisible[index+4] ? "toggle" : ""}`} onClick={() => toggleVisible(index+4)} > 
+                        <div className={`btn ${allVisible[index+4] ? "toggle" : ""}`} > 
                           <ArrowIcon />
                         </div>
                       </div>
@@ -194,11 +194,11 @@ const Members = (props) => {
                         <img src={`https://res.cloudinary.com/khairahscorner/image/upload/${findImg(member.tag, allImages)}.jpg`}  alt={member.stageName} />
                         <div className="overlay"/>
                       </div>
-                      <div className="content">
+                      <div className="content" onClick={() => toggleVisible(index+8)} style={{cursor:'pointer'}}>
                         <div className="text">
                           <span>Name: </span>{member.stageName}
                         </div>
-                        <div className={`btn ${allVisible[index+8] ? "toggle" : ""}`} onClick={() => toggleVisible(index+8)} > 
+                        <div className={`btn ${allVisible[index+8] ? "toggle" : ""}`} > 
                           <ArrowIcon />
                         </div>
                       </div>

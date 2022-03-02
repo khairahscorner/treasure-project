@@ -40,6 +40,10 @@ export const Songs = loadable(() => import("../pages/media"), {
   fallback: Preloader,
 });
 
+export const Dramas = loadable(() => import("../pages/dramas"), {
+  fallback: Preloader,
+});
+
 export const Gallery = loadable(() => import("../pages/gallery"), {
   fallback: Preloader,
 });

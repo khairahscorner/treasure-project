@@ -7,7 +7,7 @@ import {MainWrapper, ButtonWrapper} from '../components/styles';
 import {URL, YOUTUBE_KEY} from '../config';
 
 const SingleSong = () => {
-  const {songId} = useParams();
+  const {video, songId} = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [results, setResults] = useState({});
@@ -77,7 +77,7 @@ const SingleSong = () => {
             </>)
           )}
           <ButtonWrapper style={{fontSize: "18px", margin: "30px auto"}}>
-              <NavLink to="/songs">Go Back</NavLink>
+              <NavLink to={`/${video}`}>Go Back</NavLink>
             </ButtonWrapper>
         </div>
       </MainWrapper>

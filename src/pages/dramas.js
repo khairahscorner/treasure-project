@@ -53,7 +53,7 @@ const Dramas = () => {
               {results.length > 6 ? (
                 <div className="btn">
                   <ButtonWrapper>
-                    <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA">
+                    <a target="_blank" rel="noreferrer" href={`https://www.youtube.com/playlist?list=${DRAMAS_ID}`}>
                       Watch more
                     </a>
                   </ButtonWrapper>

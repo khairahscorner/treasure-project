@@ -288,12 +288,9 @@ export const MainWrapper = styled.main`
         font-weight: 600;
     }
     .flex-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        @media ${screens.mobileL} {
-            justify-content: center;
-        }
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
         .member {
             width: 24%;
         }

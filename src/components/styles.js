@@ -303,6 +303,15 @@ export const MainWrapper = styled.main`
             flex-direction: column;
             margin-bottom: 40px;
         }
+        .img-box {
+            position: relative;
+            width: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
     .img-row {
         display: grid;

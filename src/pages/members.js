@@ -14,7 +14,7 @@ export const findImg = (val, arr) => {
 
 const query = `
 {
-  memberDetailsCollection(order: sys_updatedAt_ASC) {
+  memberDetailsCollection(order: updatedAt_ASC) {
     items {
       fullName
       stageName

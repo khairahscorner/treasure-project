@@ -22,7 +22,7 @@ const Gallery = () => {
           </div>
         </div>
         <div className="section">
-            <div className="flex-row">
+            <div className="img-row">
                 {
                     allImages.length> 0 && (
                         allImages.map(el => (

@@ -53,7 +53,7 @@ const Songs = () => {
           <>
             <div className="section">
               <h2 className="section-heading" >~ TITLE TRACKS ~</h2>
-              <div className="flex-row">
+              <div className="grid-row">
                 {results.titleTracks.slice(0,6).map(el => (
                   <div className="flex-group" key={el.id}>
                     <NavLink to={`/songs/${el.snippet.resourceId.videoId}`}>
@@ -83,7 +83,7 @@ const Songs = () => {
             </div>
             <div className="section">
               <h2 className="section-heading" >~ OTHER TRACKS ~</h2>
-              <div className="flex-row">
+              <div className="grid-row">
                 {results.otherTracks.slice(0,6).map(el => (
                   <div className="flex-group" key={el.id}>
                     <NavLink to={`/songs/${el.snippet.resourceId.videoId}`}>
@@ -112,7 +112,7 @@ const Songs = () => {
             </div>
             <div className="section">
               <h2 className="section-heading" >~ AUDIO ONLY ~</h2>
-              <div className="flex-row">
+              <div className="grid-row">
                 {results.audioTracks.slice(0,6).map(el => (
                   <div className="flex-group" key={el.id}>
                     <NavLink to={`/songs/${el.snippet.resourceId.videoId}`}>

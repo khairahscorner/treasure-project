@@ -32,7 +32,7 @@ const Dramas = () => {
           <>
             <div className="section">
               <h2 className="section-heading" >~ WEB DRAMAS ~</h2>
-              <div className="flex-row">
+              <div className="grid-row">
                 {results.slice(0,6).map(el => (
                   <div className="flex-group" key={el.id}>
                     <NavLink to={`/dramas/${el.snippet.resourceId.videoId}`}>

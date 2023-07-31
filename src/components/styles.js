@@ -293,12 +293,10 @@ export const MainWrapper = styled.main`
         gap: 1rem;
         @media ${screens.mobileL} {
             grid-template-columns: repeat(1, minmax(0, 1fr));
+            padding: 0 15px;
         }
         .member {
             width: 100%;
-            @media ${screens.mobileL} {
-                width 100%;
-            }
         }
         .flex-group {
             width: 30%;
@@ -307,9 +305,6 @@ export const MainWrapper = styled.main`
             display: flex;
             flex-direction: column;
             margin-bottom: 40px;
-            @media ${screens.mobileL} {
-                width 80%;
-            }
         }
         .img-box {
             position: relative;

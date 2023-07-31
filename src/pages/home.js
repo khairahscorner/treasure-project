@@ -21,7 +21,7 @@ const Home = () => {
             <div className="about">
               <p>This was created by a<a target="_blank" rel="noreferrer" href="https://www.threads.net/@skincarebiased"> Treasure Maker</a>.</p>
               <p>It shares details about the boy group, <span className="span">Treasure</span>, its members and a way to stream all their songs and M/Vs.</p>
-              <p>Official Fandom Color: <span className="span" style={{backgroundColor: "#87ceeb"}}>Sky Blue</span></p>
+              <p>Official Fandom Color: <span className="span" style={{backgroundColor: "#87ceeb", padding: "2px 8px", borderRadius: "4px"}}>Sky Blue</span></p>
             </div>
           </div>
           <div className="second-section">

@@ -86,7 +86,7 @@ const Members = (props) => {
             </div>
             <div className="about text">
               Learn about each member - full names, nicknames, ages, MBTIs and
-              individual positions in TREASURE; <span className="span">in no particular order.</span><br />
+              individual positions in TREASURE.<br />
               <span>Last Update: 2023</span><br />
               Stay updated via their 
               <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA"> YouTube channel</a>.

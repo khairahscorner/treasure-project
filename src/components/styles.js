@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {screens} from '../sizes';
-const red = '#be0028';
+// const red = '#be0028';
+const blue = "#87ceeb";
 
 export const HeaderWrapper = styled.header`
     position: sticky;
@@ -37,7 +38,7 @@ export const HeaderWrapper = styled.header`
             padding: 70px 0 50px;
             flex-direction: column;
             align-items: center;
-            background-color: ${red};
+            background-color: ${blue};
             transform: translateX(110%);
             transition: all 0.5s ease;
             @media ${screens.mobileL} {
@@ -162,15 +163,15 @@ export const FooterWrapper = styled.footer`
             border-bottom: 2px dotted #ffffff;
             transition: color 0.5s ease, border-bottom 0.5s ease;
             &:hover {
-                border-bottom: 2px dotted ${red};
-                color: ${red};
+                border-bottom: 2px dotted ${blue};
+                color: ${blue};
             }
         }
     }
 `
 export const ButtonWrapper = styled.button`
     padding: 10px 20px;
-    background-color: ${red};
+    background-color: ${blue};
     border: 1px solid transparent;
     border-radius: 10px;
     transition: transform .5s ease-in-out;
@@ -266,7 +267,7 @@ export const MainWrapper = styled.main`
         font-style: italic;
         font-weight: 400;
         text-decoration: underline;
-        color: ${red};
+        color: ${blue};
     }
     .section {
         padding: 50px 0;
@@ -328,7 +329,7 @@ export const MainWrapper = styled.main`
                 object-fit: cover;
             }
             &:hover {
-                border: 1px solid ${red};
+                border: 1px solid ${blue};
                 transform: scale(1.02);
             }
             @media ${screens.mobileL} {

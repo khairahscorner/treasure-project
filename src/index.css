@@ -28,7 +28,8 @@ ul {
 }
 a {
 	text-decoration: none;
-	color: #be0028;
+	/* color: #be0028; */
+	color: #87ceeb;
 }
 
 :focus {

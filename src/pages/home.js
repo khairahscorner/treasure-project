@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import Layout from '../components/layout';
 import {MainWrapper, ButtonWrapper} from '../components/styles';
 import Logo from "../assets/main_logo.svg";
-import Poster from "../assets/treasure4.jpeg";
+import Poster from "../assets/group.jpg";
 
 const Home = () => {
 
@@ -19,8 +19,9 @@ const Home = () => {
             <h2 className="quote">"안녕하세요, 트레저 입니다"</h2>
             <p className="sub span">"Hello, We Are Treasure"</p>
             <div className="about">
-              <p>This was created by a<a target="_blank" rel="noreferrer" href="https://www.instagram.com/khairahscorner"> Treasure Maker</a>.</p>
+              <p>This was created by a<a target="_blank" rel="noreferrer" href="https://www.threads.net/@skincarebiased"> Treasure Maker</a>.</p>
               <p>It shares details about the boy group, <span className="span">Treasure</span>, its members and a way to stream all their songs and M/Vs.</p>
+              <p>Official Fandom Color: <span className="span" style={{backgroundColor: "#87ceeb"}}>Sky Blue</span></p>
             </div>
           </div>
           <div className="second-section">
@@ -30,7 +31,7 @@ const Home = () => {
               <div className="overlay"></div>
             </div>
             <div className="bio">
-              Treasure (Hangul: 트레저; Japanese: トレジャー; stylized as TREASURE) is a South Korean boy band formed in 2019 by YG Entertainment through the reality-survival program YG Treasure Box. The twelve-piece group equally shares joint leadership among the eldest members, Choi Hyun-suk and Jihoon, and officially made their debut on August 7, 2020 with their single album, The First Step: Chapter One, and its lead single, "Boy".
+              Treasure (Hangul: 트레저; Japanese: トレジャー; stylized as TREASURE) is a South Korean boy band formed in 2019 by YG Entertainment, through YG Treasure Box (2018–2019); and consists of 10 members: Choi Hyun-suk, Jihoon, Yoshi, Junkyu, Yoon Jae-hyuk, Asahi, Doyoung, Haruto, Park Jeong-woo, and So Jung-hwan. Its former members, Mashiho and Bang Ye-dam, departed from the group in November 2022.
               <p>Source: <a className="source" href="https://en.wikipedia.org/wiki/Treasure_(band)">- Wikipedia</a></p>
             </div>
             <ButtonWrapper>

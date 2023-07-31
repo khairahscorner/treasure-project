@@ -5,7 +5,7 @@ import {MainWrapper} from '../components/styles';
 import {Preloader} from '../pageloader/index';
 import {SPACE_ID, ACCESS_TOKEN} from '../config';
 import {ReactComponent as ArrowIcon} from '../assets/arrow-down.svg';
-import Poster from '../assets/group.jpeg';
+import Poster from '../assets/group-2.jpg';
 
 export const findImg = (val, arr) => {
   const result = arr.find((el) => el.public_id.includes(val) === true)
@@ -14,7 +14,7 @@ export const findImg = (val, arr) => {
 
 const query = `
 {
-  memberDetailsCollection(order: sys_firstPublishedAt_ASC) {
+  memberDetailsCollection(order: sys_updatedAt_ASC) {
     items {
       fullName
       stageName
@@ -25,6 +25,7 @@ const query = `
       hobbies
       tag
       truz
+      mbti
     }
   }
 }
@@ -84,19 +85,19 @@ const Members = (props) => {
               <div className="overlay"/>
             </div>
             <div className="about text">
-              Learn about each member; full names, nicknames, ages, hobbies and
-              individual positions in TREASURE. <br />
-              <span>ALL THE MEMBER AGES ARE IN KOREAN AGE. </span><br />
-              All info were gotten through intro content from their 
+              Learn about each member - full names, nicknames, ages, MBTIs and
+              individual positions in TREASURE; <span className="span">in no particular order.</span><br />
+              <span>Last Update: 2023</span><br />
+              Stay updated via their 
               <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCx9hXYOCvUYwrprEqe4ZQHA"> YouTube channel</a>.
             </div>
           </div>
           {allImages.length>0 && (
             <>
               <div className="section">
-                <h2 className="section-heading">~ HYUNG LINE (형) ~</h2>
+                <h2 className="section-heading">~ CURRENT MEMBERS ~</h2>
                 <div className="flex-row">
-                  {memberDetails.slice(0,4).map((member, index) => (
+                  {memberDetails.slice(0,10).map((member, index) => (
                     <div className="member" key={member.stageName}>
                       <div className="img-box">
                         <img src={`https://res.cloudinary.com/khairahscorner/image/upload/${findImg(member.tag, allImages)}.jpg`} alt={member.stageName} />
@@ -116,7 +117,7 @@ const Members = (props) => {
                             <span>Full Name: </span> {member.fullName}
                           </div>
                           <div className="text">
-                            <span>Age: </span> {(new Date()).getUTCFullYear() - member.yob + 1}
+                            <span>Age: </span> {(new Date()).getUTCFullYear() - member.yob}
                           </div>
                           <div className="text">
                             <span>Date of Birth: </span> {member.dob}, {member.yob}
@@ -128,7 +129,7 @@ const Members = (props) => {
                             <span>Position: </span> {member.position}
                           </div>
                           <div className="text">
-                            <span>Hobbies: </span> {member.hobbies}
+                            <span>MBTI: </span> {member.mbti}
                           </div>
                           <div className="text">
                             <span>Truz Character: </span> {member.truz}
@@ -140,90 +141,38 @@ const Members = (props) => {
                 </div>
               </div>
               <div className="section">
-                <h2 className="section-heading">~ MIDDLE LINE (가운데) ~</h2>
+                <h2 className="section-heading">~ FORMER MEMBERS ~</h2>
                 <div className="flex-row">
-                {memberDetails.slice(4,8).map((member, index) => (
+                  {memberDetails.slice(10,12).map((member, index) => (
                     <div className="member" key={member.stageName}>
                       <div className="img-box">
                         <img src={`https://res.cloudinary.com/khairahscorner/image/upload/${findImg(member.tag, allImages)}.jpg`}  alt={member.stageName} />
                         <div className="overlay"/>
                       </div>
-                      <div className="content" onClick={() => toggleVisible(index+4)} style={{cursor:'pointer'}}>
+                      <div className="content" onClick={() => toggleVisible(index+10)} style={{cursor:'pointer'}}>
                         <div className="text">
                           <span>Name: </span>{member.stageName}
                         </div>
-                        <div className={`btn ${allVisible[index+4] ? "toggle" : ""}`} > 
+                        <div className={`btn ${allVisible[index+10] ? "toggle" : ""}`} > 
                           <ArrowIcon />
                         </div>
                       </div>
-                      {allVisible[index+4] ? (
+                      {allVisible[index+10] ? (
                         <>
                           <div className="text">
                             <span>Full Name: </span> {member.fullName}
                           </div>
                           <div className="text">
-                            <span>Age: </span> {(new Date()).getUTCFullYear() - member.yob + 1}
+                            <span>Age: </span> {(new Date()).getUTCFullYear() - member.yob}
                           </div>
                           <div className="text">
                             <span>Date of Birth: </span> {member.dob}, {member.yob}
                           </div>
                           <div className="text">
-                            <span>Nickname: </span> {member.nickname}
-                          </div>
-                          <div className="text">
-                            <span>Position: </span> {member.position}
-                          </div>
-                          <div className="text">
-                            <span>Hobbies: </span> {member.hobbies}
-                          </div>
-                          <div className="text">
                             <span>Truz Character: </span> {member.truz}
                           </div>
-                          </>)
-                      : null}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="section">
-                <h2 className="section-heading">~ MAKNAE LINE (막내) ~</h2>
-                <div className="flex-row">
-                  {memberDetails.slice(8,12).map((member, index) => (
-                    <div className="member" key={member.stageName}>
-                      <div className="img-box">
-                        <img src={`https://res.cloudinary.com/khairahscorner/image/upload/${findImg(member.tag, allImages)}.jpg`}  alt={member.stageName} />
-                        <div className="overlay"/>
-                      </div>
-                      <div className="content" onClick={() => toggleVisible(index+8)} style={{cursor:'pointer'}}>
-                        <div className="text">
-                          <span>Name: </span>{member.stageName}
-                        </div>
-                        <div className={`btn ${allVisible[index+8] ? "toggle" : ""}`} > 
-                          <ArrowIcon />
-                        </div>
-                      </div>
-                      {allVisible[index+8] ? (
-                        <>
                           <div className="text">
-                            <span>Full Name: </span> {member.fullName}
-                          </div>
-                          <div className="text">
-                            <span>Age: </span> {(new Date()).getUTCFullYear() - member.yob + 1}
-                          </div>
-                          <div className="text">
-                            <span>Date of Birth: </span> {member.dob}, {member.yob}
-                          </div>
-                          <div className="text">
-                            <span>Nickname: </span> {member.nickname}
-                          </div>
-                          <div className="text">
-                            <span>Position: </span> {member.position}
-                          </div>
-                          <div className="text">
-                            <span>Hobbies: </span> {member.hobbies}
-                          </div>
-                          <div className="text">
-                            <span>Truz Character: </span> {member.truz}
+                            <span>Left: </span> November 2022
                           </div>
                           </>)
                       : null}

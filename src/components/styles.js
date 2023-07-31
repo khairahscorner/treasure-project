@@ -291,8 +291,14 @@ export const MainWrapper = styled.main`
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 1rem;
+        @media ${screens.mobileL} {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
         .member {
-            width: 24%;
+            width: 100%;
+            @media ${screens.mobileL} {
+                width 100%;
+            }
         }
         .flex-group {
             width: 30%;

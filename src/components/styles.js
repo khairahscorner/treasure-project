@@ -315,7 +315,7 @@ export const MainWrapper = styled.main`
         .img-group {
             position: relative;
             border: 1px solid transparent;
-            width: 48%;
+            width: 100%;
             margin-bottom: 60px;
             transition: transform 1s ease;
             img {
@@ -326,9 +326,6 @@ export const MainWrapper = styled.main`
             &:hover {
                 border: 1px solid ${blue};
                 transform: scale(1.02);
-            }
-            @media ${screens.mobileL} {
-                width 80%;
             }
         }
     }

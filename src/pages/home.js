@@ -31,7 +31,7 @@ const Home = () => {
               <div className="overlay"></div>
             </div>
             <div className="bio">
-              Treasure (Hangul: 트레저; Japanese: トレジャー; stylized as TREASURE) is a South Korean boy band formed in 2019 by YG Entertainment, through YG Treasure Box (2018–2019); and consists of 10 members: Choi Hyun-suk, Jihoon, Yoshi, Junkyu, Yoon Jae-hyuk, Asahi, Doyoung, Haruto, Park Jeong-woo, and So Jung-hwan. Its former members, Mashiho and Bang Ye-dam, departed from the group in November 2022.
+              Treasure (Hangul: 트레저; Japanese: トレジャー; stylized as TREASURE) is a South Korean boy band formed in 2019 by YG Entertainment, through YG Treasure Box (2018–2019); and consists of 10 members: Choi Hyun-suk, Jihoon, Yoshi, Junkyu, Yoon Jae-hyuk, Asahi, Doyoung, Haruto, Park Jeong-woo, and So Jung-hwan.
               <p>Source: <a className="source" href="https://en.wikipedia.org/wiki/Treasure_(band)">- Wikipedia</a></p>
             </div>
             <ButtonWrapper>

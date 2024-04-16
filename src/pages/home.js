@@ -19,7 +19,7 @@ const Home = () => {
             <h2 className="quote">"안녕하세요, 트레저 입니다"</h2>
             <p className="sub span">"Hello, We Are Treasure"</p>
             <div className="about">
-              <p>This was created by a<a target="_blank" rel="noreferrer" href="https://www.threads.net/@skincarebiased"> Treasure Maker</a>.</p>
+              <p>This was created by a<a target="_blank" rel="noreferrer" href="https://github.com/khairahscorner"> Treasure Maker</a>.</p>
               <p>It shares details about the boy group, <span className="span">Treasure</span>, its members and a way to stream all their songs and M/Vs.</p>
               <p style={{margin: "15px 0"}}>Debut Date: <span class="span" style={{color: "rgb(135, 206, 235)", backgroundColor: "#2e2e2e", padding: "4px 8px", borderRadius: "4px"}}>August 7, 2020 </span></p>
               <p>Official Fandom Color: <span className="span" style={{backgroundColor: "#87ceeb", padding: "2px 8px", borderRadius: "4px"}}>Sky Blue</span></p>

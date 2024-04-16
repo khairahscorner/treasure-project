@@ -105,7 +105,7 @@ const Layout = ({children}) => {
             </div>
           </div>
           <div className="credit">
-            Made with 🖤, by a <a target="_blank" rel="noreferrer" href="https://www.threads.net/@skincarebiased">Teume</a>
+            Made with 🖤, by a <a target="_blank" rel="noreferrer" href="https://github.com/khairahscorner">Teume</a>
           </div>
         </FooterWrapper>
       </div>
